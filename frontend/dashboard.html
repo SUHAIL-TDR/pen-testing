@@ -1,0 +1,363 @@
+<html>
+ <head>
+  <title>
+    Dashboard
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            position: fixed;
+            height: 100%;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            padding-top: 20px;
+        }
+        .sidebar img {
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px 20px;
+            color: #333;
+            cursor: pointer;
+        }
+        .sidebar ul li:hover, sidebar ul li.active {
+            background-color: #e6f7ff;
+            color: #007bff;
+        }
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header select, .header input {
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .header .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .header .user-info img {
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+        .vulnerability-details {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .vulnerability-details h2 {
+            margin-top: 0;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+        .tabs div {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .tabs div.active {
+            border-bottom: 2px solid #007bff;
+            color: #007bff;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .search-bar input {
+            padding: 5px;
+            width: 200px;
+        }
+        .search-bar button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f5f5f5;
+        }
+        .table .critical {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        .table .high {
+            color: #ff9900;
+            font-weight: bold;
+        }
+        .table .medium {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        .table .low {
+            color: #00cc00;
+            font-weight: bold;
+        }
+        .table .actions i {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="sidebar">
+   <img alt="Logo" height="90" src="https://www.121pr.com/wp-content/uploads/2018/03/1.png" width="120"/>
+   <ul>
+    <li>
+     <i class="fas fa-shield-alt">
+     </i>
+     <a href="penetration testing.html" style="text-decoration: none; color: #000000;">Penetration Testing</a>
+    </li>
+    <li>
+     <i class="fas fa-chart-line">
+     </i>
+     Dashboard
+    </li>
+    <li class="active">
+     <i class="fas fa-bug">
+     </i>
+     <a href="vulnerabilities.html" style="text-decoration: none; color: #000000;">Vulnerabilities</a>
+     
+    </li>
+    <li>
+     <i class="fas fa-calendar-alt">
+     </i>
+     Schedule
+    </li>
+    
+    <li>
+     <i class="fas fa-file-alt">
+     </i>
+     <a href="report.html" style="text-decoration: none; color: #000000;">Reports</a>
+    </li>
+    <li>
+     <i class="fas fa-globe">
+     </i>
+     <a href="web scanning.html" style="text-decoration: none; color: #000000;">Web Scanning</a>
+    </li>
+    <li>
+     <i class="fas fa-code">
+     </i>
+     <a href="api.html" style="text-decoration: none; color: #000000;">API Scanning</a>
+    </li>
+    <li>
+     <i class="fas fa-network-wired">
+     </i>
+     External Network Scanning
+    </li>
+    <li>
+     <i class="fas fa-network-wired">
+     </i>
+     Internal Network Scanning
+    </li>
+    
+   </ul>
+  </div>
+   
+   <div class="content">
+    <div class="header">
+        <div>
+            <select>
+                <option>Select Organization</option>
+            </select>
+            <select>
+                <option>Select Assets</option>
+            </select>
+        </div>
+        <div class="user-info">
+            <i class="fas fa-bell"></i>
+            <span>User</span>
+            <img alt="User Avatar" height="40" src="https://www.121pr.com/wp-content/uploads/2018/03/1.png" width="40"/>
+        </div>
+    </div>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+     body {
+              font-family: 'Roboto', sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #f5f5f5;
+          }
+          .content {
+              padding: 20px;
+          }
+          .overview {
+              background-color: #ffffff;
+              border-radius: 5px;
+              padding: 20px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          .overview h2 {
+              font-size: 24px;
+              margin-bottom: 20px;
+          }
+          .cards {
+              display: flex;
+          }
+          .card {
+              background-color: #ffffff;
+              border-radius: 5px;
+              padding: 20px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              flex: 1;
+              margin-right: 20px;
+          }
+          .card:last-child {
+              margin-right: 0;
+          }
+          .card h3 {
+              font-size: 20px;
+              margin-bottom: 10px;
+          }
+          .card p {
+              font-size: 16px;
+              color: #2a4dcb;
+          }
+          .chart-container {
+              display: flex;
+              justify-content: space-between;
+          }
+          .chart {
+              background-color: #ffffff;
+              border-radius: 5px;
+              padding: 20px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              flex: 1;
+              margin-right: 20px;
+          }
+          .chart:last-child {
+              margin-right: 0;
+          }
+          .chart h3 {
+              font-size: 20px;
+              margin-bottom: 10px;
+          }
+          .chart img {
+              width: 100%;
+              height: auto;
+              border-radius: 5px;
+          }
+    </style>
+   </head>
+   <body>
+    <div class="content">
+     <div class="overview">
+      <h2>
+       Dashboard Overview
+      </h2>
+      <div class="cards">
+       <div class="card">
+        <h3>
+         Total Vulnerabilities
+        </h3>
+        <p>
+         
+        </p>
+       </div>
+       <div class="card">
+        <h3>
+         Critical Issues
+        </h3>
+        <p>
+         
+        </p>
+       </div>
+       <div class="card">
+        <h3>
+         High Risk
+        </h3>
+        <p>
+         
+        </p>
+       </div>
+       <div class="card">
+        <h3>
+         Medium Risk
+        </h3>
+        <p>
+         
+        </p>
+       </div>
+       <div class="card">
+        <h3>
+         Low Risk
+        </h3>
+        <p>
+         
+        </p>
+       </div>
+      </div>
+      <div class="chart-container">
+       <div class="chart">
+        <h3>
+         Vulnerabilities Over Time
+        </h3>
+        <img alt="Line chart showing vulnerabilities over time" height="400" src="https://storage.googleapis.com/a1aa/image/8ol51wnlxm4sM5lSTff7JmCQdzbmO3wib4CPiMbTz3PknfJnA.jpg" width="600"/>
+       </div>
+       <div class="chart">
+        <h3>
+         Risk Distribution
+        </h3>
+        <img alt="Pie chart showing risk distribution" height="400" src="https://storage.googleapis.com/a1aa/image/BmsKIEVQGrqaIV8OzHljrwCLqcXffUzFSsDO1MVpApeMPfTOB.jpg" width="600"/>
+       </div>
+      </div>
+     </div>
+    </div>
+   </body>
+  </html>
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <p>This is the dashboard page.</p>
+</body>
+</html>
